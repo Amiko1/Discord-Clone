@@ -11,7 +11,7 @@ interface ServerSidebarProps {
 
 export default async function ServerSidebar({ serverId }: ServerSidebarProps) {
   const profile = await currentProfile();
-  console.log(serverId);
+
   if (!profile) {
     return redirect("/");
   }
