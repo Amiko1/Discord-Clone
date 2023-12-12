@@ -59,7 +59,7 @@ export default function ServerSearch({ data }: ServerSearchProps) {
     }
 
     if (type === "channel") {
-      return router.push(`/servers/${params?.serverId}/channel/${id}`);
+      return router.push(`/servers/${params?.serverId}/channels/${id}`);
     }
   };
   return (
