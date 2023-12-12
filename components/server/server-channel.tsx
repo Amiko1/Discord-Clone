@@ -27,7 +27,6 @@ export default function ServerChannel({
   const params = useParams();
   const router = useRouter();
   const { onOpen } = useModal();
-
   const Icon = iconMap[channel.type];
   const onClick = () => {
     router.push(`/servers/${params?.serverId}/channels/${channel.id}`);

@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 import ChatHeader from "@/components/chat/chat-header";
 
 interface ChannelIdPageProps {
-  params: { channelId: string; severId: string; name: string };
+  params: { channelId: string; serverId: string; name: string };
 }
 export default async function ChanngelIdPAge({ params }: ChannelIdPageProps) {
   const profile = await currentProfile();
@@ -14,7 +14,7 @@ export default async function ChanngelIdPAge({ params }: ChannelIdPageProps) {
   if (!profile) {
     return redirectToSignIn();
   }
-
+  console.log();
   const channel = await db.channel.findUnique({
     where: {
       id: params.channelId,
@@ -23,7 +23,7 @@ export default async function ChanngelIdPAge({ params }: ChannelIdPageProps) {
 
   const member = await db.member.findFirst({
     where: {
-      serverId: params.severId,
+      serverId: params.serverId,
       profileId: profile.id,
     },
   });
@@ -35,7 +35,7 @@ export default async function ChanngelIdPAge({ params }: ChannelIdPageProps) {
   return (
     <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
       <ChatHeader
-        serverId={params.severId}
+        serverId={params.serverId}
         name={channel.name}
         type="channel"
       />

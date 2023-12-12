@@ -6,6 +6,7 @@ import NavigationSidebar from "@/components/navigation/navigation-sidebar";
 import ServerSidebar from "@/components/server/server-sidebar";
 
 export default function MobileToggle({ serverId }: { serverId: string }) {
+  console.log(serverId);
   return (
     <Sheet>
       <SheetTrigger asChild>
