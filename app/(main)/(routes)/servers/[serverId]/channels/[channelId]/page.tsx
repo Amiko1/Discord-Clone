@@ -14,7 +14,7 @@ export default async function ChanngelIdPAge({ params }: ChannelIdPageProps) {
   if (!profile) {
     return redirectToSignIn();
   }
-  console.log();
+
   const channel = await db.channel.findUnique({
     where: {
       id: params.channelId,
@@ -33,7 +33,7 @@ export default async function ChanngelIdPAge({ params }: ChannelIdPageProps) {
   }
 
   return (
-    <div className="bg-white dark:bg-[#313338] flex flex-col h-full">
+    <div className="dark:bg-[#313338] bg-white  flex flex-col h-full">
       <ChatHeader
         serverId={params.serverId}
         name={channel.name}
